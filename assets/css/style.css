@@ -1,0 +1,90 @@
+body {
+    background-image: url(../images/background.png);
+    /* font-family: 'Aldrich', sans-serif; */
+    font-family: 'Press Start 2P', cursive;
+}
+
+p {
+    color: white;
+    margin-top: 20px;
+}
+
+.title {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;    
+    position: relative;
+}
+
+.title-img {
+    width: 100%;
+}
+
+.title-hangman {
+    position: absolute;
+    color: white;
+    top: 20%;
+    left: 10%;
+}
+
+.title-metroid {
+    position: absolute;
+    color: white;
+    bottom: 20%;
+    left: 20%;
+}
+
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.content-fluid {
+    margin-top: 20px;
+}
+
+.custom-border {
+    border: 4px dashed white;
+}
+
+.scores {
+    font-weight: bold;
+}
+
+.blanks {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 850px) {
+    .wrapper {
+        width: 80%;
+    }
+
+    .title {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .title-hangman {
+        top: 0;
+        left: 0;
+    }
+
+    .title-metroid {
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .wrapper {
+        width: 100%;
+    }
+    
+    .title {
+        width: 100%;
+        margin: 0;
+    }
+}
