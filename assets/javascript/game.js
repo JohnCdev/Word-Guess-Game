@@ -1,90 +1,38 @@
+var winsHTML = document.getElementById("wins");
+var guessesHTML = document.getElementById("guesses")
+var guessesListHTML = document.getElementById("guessesList");
+
+var wins = 0;
+var guessesLeft = 12;
+
+winsHTML.innerHTML = wins;
+guessesHTML.innerHTML = guessesLeft;
+
+document.onkeyup = function (event) {
+
+    var userGuess = event.key.toLowerCase();
+
+    guessesListHTML.append(userGuess + " ");
 
 
+    //need to add the real logic
+    if (userGuess === "0") {
+        wins++;
+        alert("You did it!");
+        winsHTML.innerHTML = wins;
+        reset();
+    } else if (guessesLeft === 0) {
+        alert("You're out of guesses! You lose!")
+        reset();
+    } else {
+        guessesLeft--;
+        guessesHTML.innerHTML = guessesLeft;
+    }
+}
 
 
-
-
-
-
-
-
-
-
-// document.onkeyup = function (event) {
-
-//     var userGuess = event.key.toLowerCase();
-
-//     guesses.append(" " + userGuess + ",");
-
-//     if (userGuess === computerGuess) {
-//         winsCount++;
-//         alert("You did it!");
-//         wins.innerHTML = " " + winsCount;
-//         reset();
-//     } else if (leftCount === 0) {
-//         lossesCount++;
-//         losses.innerHTML = " " + lossesCount;
-//         alert("You're out of guesses! You lose!")
-//         reset();
-//     } else {
-//         leftCount--;
-//         left.innerHTML = " " + leftCount;
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-// var wins = document.getElementById("wins");
-// var losses = document.getElementById("losses");
-// var left = document.getElementById("left");
-// var guesses = document.getElementById("guesses");
-
-// var computerChoices = [ "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", 
-//                         "a", "s", "d", "f", "g", "h", "j", "k", "l",
-//                         "z", "x", "c", "v", "b", "n", "m"];
-
-// var winsCount = 0;
-// var lossesCount = 0;
-// var leftCount = 10;
-
-// left.innerHTML = " " + leftCount;
-
-// var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-// document.onkeyup = function (event) {
-
-//     var userGuess = event.key.toLowerCase();
-
-//     guesses.append(" " + userGuess + ",");
-
-//     if (userGuess === computerGuess) {
-//         winsCount++;
-//         alert("You did it!");
-//         wins.innerHTML = " " + winsCount;
-//         reset();
-//     } else if (leftCount === 0) {
-//         lossesCount++;
-//         losses.innerHTML = " " + lossesCount;
-//         alert("You're out of guesses! You lose!")
-//         reset();
-//     } else {
-//         leftCount--;
-//         left.innerHTML = " " + leftCount;
-//     }
-// }
-
-// function reset() {
-//     computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-//     leftCount = 10;
-//     left.innerHTML = " " + leftCount;
-//     guesses.innerHTML = "";
-// }
+function reset() {
+    guessesLeft = 12;
+    guessesHTML.innerHTML = guessesLeft;
+    guessesListHTML.innerHTML = "";
+}
