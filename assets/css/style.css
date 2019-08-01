@@ -14,11 +14,12 @@ p {
     margin-left: 35%;
     margin-right: 35%;    
     position: relative;
+    height: 200px;
 }
 
-.title-img {
+/* .title-img {
     width: 100%;
-}
+} */
 
 .title-hangman {
     position: absolute;
@@ -34,7 +35,7 @@ p {
     color: white;
     bottom: 10%;
     left: 0;
-    font-size: 60px;
+    font-size: 64px;
 }
 
 .wrapper {
@@ -60,14 +61,18 @@ p {
 }
 
 .glow {
-    text-shadow: 0 0 40px limegreen;
+    text-shadow: 0 0 40px yellowgreen;
     animation: pulse ease-in-out 2s infinite;
 }
 
+#hintImg {
+    max-height: 400px;
+}
+
 @keyframes pulse {
-    0% {text-shadow:  0 0 40px limegreen}
-    50% {text-shadow:  0 0 10px limegreen}
-    100% {text-shadow:  0 0 40px limegreen}
+    0% {text-shadow:  0 0 40px yellowgreen}
+    50% {text-shadow:  0 0 10px yellowgreen}
+    100% {text-shadow:  0 0 40px yellowgreen}
 }
 
 @media screen and (max-width: 850px) {
@@ -79,6 +84,7 @@ p {
         width: 50%;
         margin-left: 25%;
         margin-right: 25%;
+        height: 150px;
     }
 
     .title-hangman {
@@ -101,6 +107,7 @@ p {
     .title {
         width: 100%;
         margin: 0;
+        height: 125px;
     }
 
     .title-metroid {
