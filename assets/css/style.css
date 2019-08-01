@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/background.png);
+    background-image: url(../images/nes_bck.png);
     /* font-family: 'Aldrich', sans-serif; */
     font-family: 'Press Start 2P', cursive;
 }
@@ -25,13 +25,16 @@ p {
     color: white;
     top: 20%;
     left: 10%;
+    font-size: 20px;
+    transform: rotate(10deg);
 }
 
 .title-metroid {
     position: absolute;
     color: white;
-    bottom: 20%;
-    left: 20%;
+    bottom: 10%;
+    left: 0;
+    font-size: 60px;
 }
 
 .wrapper {
@@ -44,7 +47,7 @@ p {
 }
 
 .custom-border {
-    border: 4px dashed white;
+    border: 4px dashed limegreen;
 }
 
 .scores {
@@ -54,6 +57,17 @@ p {
 .blanks {
     margin-top: 40px;
     margin-bottom: 40px;
+}
+
+.glow {
+    text-shadow: 0 0 40px limegreen;
+    animation: pulse ease-in-out 2s infinite;
+}
+
+@keyframes pulse {
+    0% {text-shadow:  0 0 40px limegreen}
+    50% {text-shadow:  0 0 10px limegreen}
+    100% {text-shadow:  0 0 40px limegreen}
 }
 
 @media screen and (max-width: 850px) {
@@ -68,13 +82,14 @@ p {
     }
 
     .title-hangman {
-        top: 0;
+        top: 20px;
         left: 0;
     }
 
     .title-metroid {
         bottom: 0;
         left: 0;
+        font-size: 50px;
     }
 }
 
@@ -86,5 +101,9 @@ p {
     .title {
         width: 100%;
         margin: 0;
+    }
+
+    .title-metroid {
+        font-size: 40px;
     }
 }

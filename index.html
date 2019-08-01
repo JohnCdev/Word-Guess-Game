@@ -14,25 +14,26 @@
 
 <body>
     <div class="title">
-        <img src="assets/images/title.png" alt="Samus" class="img-fluid title-img">
+        <img src="assets/images/background.png" alt="Samus" class="img-fluid title-img">
         <h1 class="title-hangman">HANGMAN</h1>
-        <h2 class="title-metroid">METROID</h2>
+        <h1 class="title-metroid glow">METROID</h1>
     </div>
 
     <div class="content-fluid">
         <div class="row wrapper">
             <div class="col-md-6 p-3 text-center custom-border">
-                <img src="assets/images/samus1.png" alt="" class="img-fluid">
+                <img src="assets/images/samus1.png" alt="" class="img-fluid" id="hintImg">
+                <p>(This is a hint!)</p>
             </div>
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md p-5 text-center custom-border">
                         <div class="scores">
-                            <p>Press any key to get started!</p>
+                            <p id="instructions">Press any key to get started!</p>
                             <p>Wins:</p>
                             <p id="wins">#</p>
                             <p>Current Area:</p>
-                            <p class="blanks">_ _ _ _ _ _</p>
+                            <p id="spaces"></p>
                             <p>Number of Guesses Remaining</p>
                             <p id="guesses">#</p>
                             <p>Letters already Guessed</p>
