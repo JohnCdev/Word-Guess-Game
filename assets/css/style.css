@@ -41,6 +41,7 @@ p {
 .wrapper {
     width: 70%;
     margin: 0 auto;
+    min-height: 400px;
 }
 
 .content-fluid {
