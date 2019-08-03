@@ -54,7 +54,7 @@ document.onkeyup = function (event) {
 
 function initialize() {
     guesses = 10;
-    guessesHTML.innerHTML = guesses
+    guessesHTML.innerHTML = guesses;
     guessesListHTML.innerHTML = "";
     computerWord = wordArray[Math.floor(Math.random() * wordArray.length)];
     splitWord = computerWord.split("");
