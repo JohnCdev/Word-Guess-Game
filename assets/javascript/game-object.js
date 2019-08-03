@@ -8,6 +8,7 @@ var hintImgHTML = document.getElementById("hintImg");
 var hangMan = {
     wordArray: ["samus", "ridley", "metroid", "tallon", "pirate", "morph", "screw"],
     computerWord: "",
+    previousWord: "",
     splitWord: [],
     spacesArray: [],
     userCorrect: false,
@@ -19,6 +20,11 @@ var hangMan = {
         guessesHTML.innerHTML = hangMan.guesses;
         guessesListHTML.innerHTML = "";
         hangMan.computerWord = hangMan.wordArray[Math.floor(Math.random() * hangMan.wordArray.length)];
+        console.log(this.computerWord + " " + this.previousWord);
+        if (hangMan.computerWord === hangMan.previousWord) {
+            this.initialize();
+        }
+        this.previousWord = this.computerWord;
         hangMan.splitWord = hangMan.computerWord.split("");
         console.log(hangMan.splitWord);
         hangMan.printSpaces();
