@@ -19,8 +19,8 @@ var hangMan = {
         guessesHTML.innerHTML = hangMan.guesses;
         guessesListHTML.innerHTML = "";
         hangMan.computerWord = hangMan.wordArray[Math.floor(Math.random() * hangMan.wordArray.length)];
-        splitWord = hangMan.computerWord.split("");
-        console.log(hangMan.wordArray);
+        hangMan.splitWord = hangMan.computerWord.split("");
+        console.log(hangMan.splitWord);
         hangMan.printSpaces();
         hangMan.pickPicture();
     },
@@ -78,25 +78,25 @@ document.onkeyup = function (event) {
         }
     }
 
-    if (splitWord.every((val) => val === "_")) {
+    if (hangMan.splitWord.every((val) => val === "_")) {
         alert("You Win!");
-        wins++;
-        winsHTML.innerHTML = wins;
-        initialize();
+        hangMan.wins++;
+        winsHTML.innerHTML = hangMan.wins;
+        hangMan.initialize();
     }
 
-    if (!userCorrect) {
-        guesses--;
-        guessesHTML.innerHTML = guesses;
-        guessesListHTML.append(userGuess + " ");
+    if (!hangMan.userCorrect) {
+        hangMan.guesses--;
+        guessesHTML.innerHTML = hangMan.guesses;
+        guessesListHTML.append(hangMan.userGuess + " ");
     }
 
-    if (guesses === 0) {
+    if (hangMan.guesses === 0) {
         alert("You're out of guesses!");
-        initialize();
+        hangMan.initialize();
     }
 
-    userCorrect = false;
+    hangMan.userCorrect = false;
 }
 
 
