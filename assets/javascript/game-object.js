@@ -16,29 +16,29 @@ var hangMan = {
     wins: 0,
     guesses: 0,
     initialize: function () {
-        hangMan.guesses = 10;
-        guessesHTML.innerHTML = hangMan.guesses;
+        this.guesses = 10;
+        guessesHTML.innerHTML = this.guesses;
         guessesListHTML.innerHTML = "";
-        hangMan.computerWord = hangMan.wordArray[Math.floor(Math.random() * hangMan.wordArray.length)];
+        this.computerWord = this.wordArray[Math.floor(Math.random() * this.wordArray.length)];
         console.log(this.computerWord + " " + this.previousWord);
-        if (hangMan.computerWord === hangMan.previousWord) {
+        if (this.computerWord === this.previousWord) {
             this.initialize();
         }
         this.previousWord = this.computerWord;
-        hangMan.splitWord = hangMan.computerWord.split("");
-        console.log(hangMan.splitWord);
-        hangMan.printSpaces();
-        hangMan.pickPicture();
+        this.splitWord = this.computerWord.split("");
+        console.log(this.splitWord);
+        this.printSpaces();
+        this.pickPicture();
     },
     printSpaces: function () {
-        hangMan.spacesArray = [];
-        for (var i = 0; i < hangMan.splitWord.length; i++) {
-            hangMan.spacesArray[i] = "_ ";
+        this.spacesArray = [];
+        for (var i = 0; i < this.splitWord.length; i++) {
+            this.spacesArray[i] = "_ ";
         }
-        spacesHTML.innerHTML = hangMan.spacesArray.join(" ");
+        spacesHTML.innerHTML = this.spacesArray.join(" ");
     },
     pickPicture: function () {
-        switch (hangMan.computerWord) {
+        switch (this.computerWord) {
             case "samus":
                 hintImgHTML.src = "assets/images/samus.png";
                 break;
